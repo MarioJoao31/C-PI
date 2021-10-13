@@ -1,17 +1,26 @@
 #include <stdio.h>
 
 int main(){
-    int i,nota,notaincre = 0;
+    int i,nota,notaincre,notamax = 0;
     
     
-    while(i <=9){
+    for(i=0; i<=4;i++){
+     
         printf("introduza o nota do aluno:");
         scanf("%d",&notaincre);
-        nota=nota+notaincre;
-        i++;
+
+        if(notaincre >= nota) {
+            notamax=notaincre;
+            printf("%d",notamax);
+        };
+
+        nota=nota+notaincre;    
+        
     };
 
-    nota=nota/10;
-    printf("media:%d",nota);
+    nota=nota/5;
+    
+    printf("media:%d\n",nota);
+    printf("Nota maxima:%d",notamax);
 
 }
