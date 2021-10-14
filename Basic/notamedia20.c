@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int main(){
-    int i,s,nota = 0;
+    int i,s,nota,notamax = 0;
+    int notamin = 20;
     int notaincre=0;
+    int notamaxaluno, notaminaluno=0;
     int notafinal = 0;
     //ciclo for 
-    for(i=0; i<=19;i++){
+    for(i=0; i<=2;i++){
         printf("Aluno n-%d\n",i);
         nota=0;
         //ciclo para ler as notas do aluno
@@ -14,6 +16,16 @@ int main(){
             printf("\nIntroduzir nota N-%d:",s);
             scanf("%d",&notaincre);
             //total das notas
+            if(notaincre>=notamax){
+                notamax=notaincre;
+                notamaxaluno=i;
+            };
+
+            if(notaincre <= notamin){
+                notamin=notaincre;
+                notaminaluno=i;
+
+            };
             nota = nota + notaincre;
         };
 
@@ -30,6 +42,9 @@ int main(){
     };
 
 // Media da nota final 
+
         notafinal=notafinal/20  ; 
-        printf("Media da nota final:%d",notafinal) ;
+        printf("Media da nota final:%d\n",notafinal) ;
+        printf("Nota maxima do aluno e numero do aluno: %d-%d\n", notamax,notamaxaluno);
+        printf("Nota minima do aluno e numero do aluno: %d-%d\n", notamin,notaminaluno);
 }
