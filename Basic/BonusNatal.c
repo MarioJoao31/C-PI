@@ -9,6 +9,7 @@ int main(){
     scanf("%d", &npais);
 
     int matriz[npais][3];
+    // UPDATE NUMERO 111 Vamos ver se isto funciona 
 
 
     // ler o numero de filhos que cada pai tem 
