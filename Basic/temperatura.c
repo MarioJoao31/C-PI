@@ -1,14 +1,14 @@
 #include <stdio.h>
 
 int main(){
-    int i,tempD,tempM,tempMax,tempDc = 0;
+                    int i,tempD,tempM,tempMax,tempDc = 0;
 
     do{
 
     printf("Temperatura media do dia:");
     scanf("%d",&tempD);
 
-    tempDc=tempDc+tempD;
+    tempDc += tempD;
 
     if(tempD>=tempMax){tempMax=tempD;};
 
