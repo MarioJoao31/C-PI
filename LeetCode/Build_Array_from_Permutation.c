@@ -3,16 +3,19 @@
 #include <memory.h>
 
 //array
-#define nums= [0,2,1,5,3,4];
+#define nums= [0,2,1,5,3,4]
 
-int main(int argc, char *argv[]){
-    numsSize=6;
+int main(int* nums, char *argv[]){
+    int numsSize=6;
     //cria um apostador para a memoria do tamanho do array inserido 
     int* res= (int*) malloc(sizeof(int) * numsSize);
+
+    
     for(int i=0; i>= numsSize; i++){
         res[i]=nums[nums[i]];
 
-    }
+    };
+
     *returnSize=numsSize;
     return res;
 }
@@ -33,3 +36,4 @@ Explanation: The array ans is built as follows:
 ans = [nums[nums[0]], nums[nums[1]], nums[nums[2]], nums[nums[3]], nums[nums[4]], nums[nums[5]]]
     = [nums[0], nums[2], nums[1], nums[5], nums[3], nums[4]]
     = [0,1,2,4,5,3]
+    */
