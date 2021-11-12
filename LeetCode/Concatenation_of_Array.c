@@ -8,6 +8,7 @@ int* getConcatenation(int* nums, int numsSize, int* returnSize){
     
     *returnSize= 2*numsSize;
     
+    //le o array e incremente o array no array  ficando duas vezes o mesmo array;
     for(int i=0; i<numsSize; i++){
         res[i] = nums[i];
         res[numsSize+i] = nums[i];

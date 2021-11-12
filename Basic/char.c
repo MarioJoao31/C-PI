@@ -3,14 +3,12 @@
 
 int main(){
     char caracter;
-    char seq[100];
+    char* seq[100]="ola eu gosto de cona ";
 
-    printf("introduz o caracter:");
-    scanf("%c", &caracter);
 
-    printf("Introduzir uma string:");
-    scanf("%s", seq);
 
-    printf("caracter--%c\n",caracter);
-    printf("String--%s\n",seq);
+
+    for(int i = 0; i<5;i++){
+        printf("%d",seq[i][2]);
+    }
 }
