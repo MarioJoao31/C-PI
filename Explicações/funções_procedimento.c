@@ -10,6 +10,10 @@ int somar( int a, int b){
     return soma;
 }
 
+void cona (){
+    printf("O gil é gay!!!\n");
+}
+
 int main(){
     int numeroA,numeroB;
     int resSoma;
@@ -21,11 +25,13 @@ int main(){
 
     // um procedimento nao usa return 
     // faz tudo o que tem dentro da procedimento 
-    falar();
+    cona();
     
     // A função somar é uma função porque usa o return para retornar um valor 
     // Dá ao resSoma o valor de soma, que veio da funcao de somar 
     resSoma=somar(numeroA,numeroB);
+
+
     // Amostra o resultado da função
     printf("%d", resSoma);
 
