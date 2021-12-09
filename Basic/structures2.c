@@ -2,6 +2,7 @@
 #include <string.h>
 
 #define TAMANHO 100
+
 typedef struct MyStruct
 {
     int numero;
@@ -26,11 +27,23 @@ int inserir(Aluno T[TAMANHO],int num, char nm[50], int a, float md){
 int main(){
     Aluno Turma[TAMANHO];
     int quantidade=0;//quantidade de alunos existentnes no array
-    int resultado;
+    int resultado,numero, ano;
+    float media;
+    char nome[50];
+
+    printf("Numero?");
+    scanf("%d", &numero);
+    printf("nome?");
+    scanf("%s", &nome);
+    printf("Ano?");
+    scanf("%d", &ano);
+    printf("Media??");
+    scanf("%f", &Media);
 
     resultado=inserir(Turma,1234,"joao",1,15.6);
 
     if(resultado ==1 ){
+        quantidade++;
         printf("Inserido!");
     }else 
     {
