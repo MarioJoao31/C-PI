@@ -23,7 +23,7 @@ int inserir(Aluno T[TAMANHO],int num, char nm[50], int a, float md){
     return(0);
 }
 
-printf("funcionou??");
+
 int main(){
     Aluno Turma[TAMANHO];
     int quantidade=0;//quantidade de alunos existentnes no array
@@ -47,7 +47,7 @@ int main(){
         printf("Inserido!");
     }else 
     {
-        printf("Não inserido!");
+        printf("Não inserido! Funciona porra");
     }
 
 
