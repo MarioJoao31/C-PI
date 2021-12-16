@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-
 #define TAMANHO 100 //tamanho defenido de 100
 
 typedef struct 
@@ -11,10 +10,14 @@ typedef struct
  float media;
 } Aluno;
 
-
+//assinaturas 
 int menu();
 int consultar(Aluno T[TAMANHO], int qt, int num);
 int inserir(Aluno T[TAMANHO], int qt, int num, char nm[50], int a, float md);
+void listar(Aluno T[TAMANHO],int qt);
+int eliminar(Aluno T[TAMANHO], int qt, int num);
+float mediaf(Aluno T[TAMANHO], int qt);
+
 
 int menu()
 {int opcao;
@@ -29,8 +32,7 @@ int menu()
   printf("0 - Sair\n");
   printf("Opcao?");
   scanf("%d",&opcao);
- } while ((opcao>6)||(opcao<0));
- return(opcao);
+ } 
 }
 
 // Consulta de um aluno a partir do seu número
@@ -66,11 +68,57 @@ int inserir(Aluno T[TAMANHO], int qt, int num, char nm[50], int a, float md)
  else return(0);
 }
 
+
+void listar(Aluno T[TAMANHO], int qt){
+  int k=0;
+ for(k=0; k<qt;k++){
+   printf("#############\n");
+    printf("Nome:%s\n", T[k].nome);
+    printf("Numero:%d\n", T[k].numero);
+    printf("Ano:%d\n", T[k].ano);
+    printf("Media:%.2f\n", T[k].media);
+  } ;
+}
+
+
+int eliminar(Aluno T[TAMANHO], int qt, int num){
+  
+  for(int k=0; k<qt;k++){
+    if(T[k].numero == num){
+       
+      T[k].numero = 0;
+      strcpy(T[k].nome,"Eliminado");
+      T[k].ano = 0;
+      T[k].media = 0.00; 
+      return(1);
+    };
+  }; 
+  return (0);
+}
+
+float mediaf(Aluno T[TAMANHO], int qt){
+  int k=0;
+  float total = 0.00;
+  for(k=0; k<qt;k++){
+    total += T[k].media;
+  };
+
+  total = total/qt;
+
+  return total;
+}
+
+
+
+
 int main()
-{ Aluno Turma[TAMANHO];
+{ Aluno Turma[TAMANHO]; // variavel turma é o array
   int quantidade = 0; // Quantidade de alunos existentes no array
   int resultado, numero, ano, opcao;
   float media;
+  int eli = 0;
+  int res= 0;
+  float res2 = 0.00;
   char nome[50];
 
  do{
@@ -91,10 +139,35 @@ int main()
 	                        }
             else printf("Não inserido!\n");
 	    break;
-  case 2: break;
-  case 3: break;
-  case 4: break;
-  case 5: break;
+  case 2: 
+        printf("Numero do aluno?");
+        scanf("%d", &numero);
+        consultar(Turma,quantidade,numero);
+
+  
+  break;
+  case 3: 
+    printf("##Listar todos os alunos##\n");
+    listar(Turma,quantidade);
+  break;
+  case 4: 
+        printf("Numero de aluno que quer eliminar:");
+        scanf("%d", &eli );
+
+        res = eliminar(Turma,quantidade, eli);
+        if (res == 1){
+          quantidade--;
+          printf("Aluno eliminado com sucesso!\n");
+        }else{
+          printf("Aluno eliminado não eliminado!\n");
+        }
+
+  break;
+  case 5: 
+        printf("##Media de todos os alunos##\n");
+        res2 = mediaf(Turma,quantidade);
+        printf(" Media da turma :%.2f", res2);
+  break;
   case 6: break;
  }
  } while (opcao != 0);
